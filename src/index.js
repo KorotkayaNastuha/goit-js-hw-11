@@ -4,6 +4,7 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 
-function imageBody() {
-  document.body.classList.remove("background");
-}
+
+// function imageBody() {
+//   document.body.classList.remove("background");
+// }
