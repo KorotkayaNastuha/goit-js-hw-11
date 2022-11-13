@@ -1,20 +1,80 @@
-// body {
-//     background-color: rgb(253, 251, 251);
-    
-// }
-// .background {
+body {
+    background-color: white;
+    font-family: 'Montserrat';
 
-//     background-image: url(https://oboi7.com/oboi/more-101828);
-//     background-repeat: no-repeat;
-//     background-size: cover;
-// }
+}
+.background-image {
+    background-image: url('../images/water-7565462_960_720.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+}
 // .container {
-//   background: linear-gradient(rgb(33, 33, 246), yellow);
-//   height: 44.4px;  
+//   background: linear-gradient(rgb(230, 230, 237), rgb(226, 226, 164));
+//   height: 60px;  
 // }
-// .search-form {
-//     display: flex;
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0%;
+    left: 30%;
+    transform: translate(0);
+    z-index: 1;
+    padding-top: 10px;
+}
+
+.search-form__input{
+    width: 400px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: azure;
+}
+.search-form__btn{
+    border-radius: 8px;
+    background-color: azure;
+}
+
+.search-form__btn>svg{
+    color: rgb(1, 1, 14);
+   justify-content: center;
+}
+// .search-form-active{
 //     justify-content: center;
-//     padding: 10px;
+//     align-items: center;
+//     position: fixed;
+//     display: flex;
+//     top: 0;
+//     left: 0;
+//     transform: translate(0);
 // }
+::placeholder{
+    color:grey;
+    padding-left: 10px;
+}
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    z-index: 1;
+    padding-top: 60px;
+}
+.photo-card{
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    width: calc((100% - 30px)/4);
+}
+.image{
+    display: inline-block;
+    width: 100%;
+}
+.info{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 //   background-image: url(https://www.behance.net/gallery/156351403/FORCES-OF-NATURE-Haifoss-Waterfall-Iceland/modules/882121859); 

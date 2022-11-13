@@ -7,12 +7,16 @@
     <link rel="stylesheet" href="./sass/index.scss" />
     <script type="module" src="./index.js"></script>
   </head>
-  <body class="background">
+  <body class="background-image">
     <!-- ❗️❗️❗️ Add partials like so for every page -->
     <div class="container">
-    <form class="search-form" id="search-form">
+    <form class="search-form search-form-active" id="search-form">
       <input class="search-form__input"type="text" name="searchQuery" autocomplete="off" placeholder="Search images..." />
-      <button class="search-form__btn"type="submit">Search</button>
+      <button class="search-form__btn"type="submit">
+        <svg width="40" height="16">
+          <use href="./images/symbol-defs.svg#icon-search"></use>
+        </svg>
+      </button>
     </form>
 
     <div class="gallery">
