@@ -8,6 +8,7 @@ const form = document.querySelector(".search-form");
 const input = document.querySelector(".search-form__input");
 const button = document.querySelector(".search-form__btn");
 const gallery = document.querySelector(".gallery");
+const btnLoad = document.querySelector(".load-more");
 
 let page = 1;
 let galleryLightbox = new SimpleLightbox('.gallery a', {
@@ -27,7 +28,9 @@ button.addEventListener('click', event => {
                 imgRender(data.hits);
                 Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`
                 );
-                galleryLightbox.refresh();
+              
+              button.style.display = 'block';
+              galleryLightbox.refresh();
         }
         })
     }
@@ -57,6 +60,23 @@ function imgRender(images) {
     }).join('');
     gallery.innerHTML += markup;
 }
+btnLoad.addEventListener('click', () => {
+    
+  const value = input.value.trim();
+  btnLoad.style.display = ' none';
+  page++;
+  fetchImages(value, page).then(data => {
+    if (data.hits.length === 0) {
+      Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.'
+      );
+    } else {
+      imgRender(data.hits);
+      Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`
+      );
+      btnLoad.style.display = 'block';
+    }
+  });
+});
 
 // function imageBody() {
 //   document.body.classList.remove("background");

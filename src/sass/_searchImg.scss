@@ -39,6 +39,7 @@ body {
 .search-form__btn>svg{
     color: rgb(1, 1, 14);
    justify-content: center;
+   padding-top: 4px;
 }
 // .search-form-active{
 //     justify-content: center;
@@ -60,6 +61,8 @@ body {
     gap: 10px;
     z-index: 1;
     padding-top: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .photo-card{
     position: relative;
@@ -73,8 +76,35 @@ body {
     width: 100%;
 }
 .info{
+    // display: flex;
+    overflow: auto;    
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+    top: 0;
+    left: 0;
     width: 100%;
+    background: rgba(144, 161, 174, 0.9);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);        
+}
+.info-item{
+    font-size: 14px;
+    padding: 0 12px;
+}
+// .photo-card:hover .image{
+//     opacity: 0;
+// }
+// .photo-card:hover .info-item{
+//     transform: translateY(0);
+//     opacity: 1;
+// }    
+
+.load-more {
     display: flex;
-    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: azure;
 }
 //   background-image: url(https://www.behance.net/gallery/156351403/FORCES-OF-NATURE-Haifoss-Waterfall-Iceland/modules/882121859); 
