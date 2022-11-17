@@ -15,4 +15,5 @@ export { fetchImages };
             .catch(error => {
                 console.error(error);
             });
-    };
+};
+    
