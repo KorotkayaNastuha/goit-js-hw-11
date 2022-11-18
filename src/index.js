@@ -34,23 +34,31 @@ button.addEventListener('click', event => {
               galleryLightbox.refresh();
         }
         })
-    }
+  } cleanGallery();
 })
+const { height: imageHeight } = document.querySelector(".gallery")
+  // .firstElementChild.getBoundingClientRect();
+
+window.scrollBy({
+  top: 100,
+  left:100,
+  behavior: "smooth",
+});
 
 btnLoad.addEventListener('click', () => {
   page++;  
   const value = input.value.trim();
-  btnLoad.style.display = 'block';
+  btnLoad.style.display = 'none';
   
   fetchImages(value, page).then(data => {
     if (data.hits.length === 0) {
-      Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.'
+      Notiflix.Notify.failure(`We're sorry, but you've reached the end of search results.`
       );
     } else {
       imgRender(data.hits);
       Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`
       );
-      
+    btnLoad.style.display = 'block';  
     }
   });
 });
@@ -77,7 +85,19 @@ function imgRender(images) {
   </div>
 </div>`;
     }).join('');
-    gallery.innerHTML += markup;
+  gallery.innerHTML += markup;
+  // galleryLightbox.refresh();
+}
+function cleanGallery () {
+  gallery.innerHTML = "";
+  page = 1;
+}
+function stopImages(images) {
+  if (images.data.hits.length < 40) {
+    
+    btnLoad.style.display = 'none';
+  }
+  // Notiflix.Notify.info(`We're sorry, but you've reached the end of search results.`);
 }
 // function imageBody() {
 //   document.body.classList.remove("background");
