@@ -36,14 +36,8 @@ button.addEventListener('click', event => {
         })
   } cleanGallery();
 })
-const { height: imageHeight } = document.querySelector(".gallery")
-  // .firstElementChild.getBoundingClientRect();
 
-window.scrollBy({
-  top: 100,
-  left:100,
-  behavior: "smooth",
-});
+
 
 btnLoad.addEventListener('click', () => {
   page++;  
@@ -62,6 +56,15 @@ btnLoad.addEventListener('click', () => {
     }
   });
 });
+function scrollingPage () {
+ const { height: cardHeight } = document.querySelector(".gallery")
+  .firstElementChild.getBoundingClientRect();
+
+window.scrollBy({
+  top: cardHeight * 1.8,
+  behavior: "smooth",
+}); 
+}
 function imgRender(images) {
     const markup = images.map(image => {
         console.log(image);
@@ -88,6 +91,7 @@ function imgRender(images) {
   gallery.innerHTML += markup;
   // galleryLightbox.refresh();
 }
+
 function cleanGallery () {
   gallery.innerHTML = "";
   page = 1;
@@ -99,6 +103,7 @@ function stopImages(images) {
   }
   // Notiflix.Notify.info(`We're sorry, but you've reached the end of search results.`);
 }
+
 // function imageBody() {
 //   document.body.classList.remove("background");
 // }
