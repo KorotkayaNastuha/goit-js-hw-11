@@ -36,9 +36,6 @@ button.addEventListener('click', event => {
         })
   } cleanGallery();
 })
-
-
-
 btnLoad.addEventListener('click', () => {
   page++;  
   const value = input.value.trim();
@@ -52,16 +49,18 @@ btnLoad.addEventListener('click', () => {
       imgRender(data.hits);
       Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`
       );
-    btnLoad.style.display = 'block';  
+      btnLoad.style.display = 'block';
+     scrollingPage() 
     }
   });
+  
 });
 function scrollingPage () {
  const { height: cardHeight } = document.querySelector(".gallery")
   .firstElementChild.getBoundingClientRect();
 
 window.scrollBy({
-  top: cardHeight * 1.8,
+  top: cardHeight * 1.5,
   behavior: "smooth",
 }); 
 }
